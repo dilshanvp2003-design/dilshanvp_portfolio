@@ -28,14 +28,13 @@ export default function Hero() {
       <div className="grid-bg pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_30%,black_10%,transparent_75%)]" />
 
       {/* gradient blobs */}
-    {/* gradient blobs - static + lighter blur on mobile, animated on desktop (heavy blur+animation combo is expensive on mobile GPUs) */}
-      <div
+  <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-32 top-10 h-[420px] w-[420px] rounded-full bg-cyan-glow/20 blur-[50px] md:animate-blob md:blur-[110px]"
+        className="pointer-events-none absolute -left-32 top-10 h-[420px] w-[420px] animate-blob rounded-full bg-cyan-glow/20 blur-[50px] md:blur-[110px]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-24 top-1/3 h-[380px] w-[380px] rounded-full bg-violet-glow/20 blur-[50px] md:animate-blob md:blur-[110px]"
+        className="pointer-events-none absolute -right-24 top-1/3 h-[380px] w-[380px] animate-blob rounded-full bg-violet-glow/20 blur-[50px] md:blur-[110px]"
         style={{ animationDelay: "3s" }}
       />
 
