@@ -27,14 +27,14 @@ export default function Hero() {
       {/* grid background */}
       <div className="grid-bg pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_30%,black_10%,transparent_75%)]" />
 
-      {/* gradient blobs */}
-  <div
+{/* gradient blobs */}
+      <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-32 top-10 h-[420px] w-[420px] animate-blob rounded-full bg-cyan-glow/20 blur-[50px] md:blur-[110px]"
+        className="blob-anim pointer-events-none absolute -left-32 top-10 h-[420px] w-[420px] animate-blob rounded-full bg-cyan-glow/20 blur-[50px] md:blur-[110px]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-24 top-1/3 h-[380px] w-[380px] animate-blob rounded-full bg-violet-glow/20 blur-[50px] md:blur-[110px]"
+        className="blob-anim pointer-events-none absolute -right-24 top-1/3 h-[380px] w-[380px] animate-blob rounded-full bg-violet-glow/20 blur-[50px] md:blur-[110px]"
         style={{ animationDelay: "3s" }}
       />
 

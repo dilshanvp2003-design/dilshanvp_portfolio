@@ -96,7 +96,7 @@ body {
   }
 }
 @media (max-width: 767px) {
-  *,
+  *:not(.blob-anim),
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
