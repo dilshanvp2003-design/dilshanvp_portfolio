@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { techIcons } from "../data/techIcons.jsx";
 
 // Split the 10 icons into an inner ring (4) and outer ring (6),
@@ -16,14 +17,14 @@ function ringPositions(count, radius, startDeg = -90) {
   });
 }
 
-function OrbitRing({ items, radius, duration, size = 480 }) {
+function OrbitRing({ items, radius, duration, size = 480, spin = true }) {
   const positions = ringPositions(items.length, radius, items === inner ? -45 : -90);
 
   return (
    <motion.div
   className="absolute inset-0"
   style={{ width: size, height: size }}
-animate={{ rotate: -360 }}
+animate={spin ? { rotate: -360 } : {}}
   transition={{ duration, repeat: Infinity, ease: "linear" }}
 >
       {items.map((tech, i) => (
@@ -36,7 +37,7 @@ animate={{ rotate: -360 }}
         >
           {/* counter-rotate so the icon stays upright while the ring spins */}
          <motion.div
-animate={{ rotate: 360 }}
+animate={spin ? { rotate: 360 } : {}}
   transition={{ duration, repeat: Infinity, ease: "linear" }}
   className="group relative -translate-x-1/2 -translate-y-1/2"
 >
@@ -57,14 +58,24 @@ animate={{ rotate: 360 }}
 }
 
 export default function OrbitVisual() {
+  // Pause the orbit rotation animation when it's scrolled out of view.
+  // Framer Motion's `animate` with repeat: Infinity keeps running on the
+  // main thread even when off-screen, which was causing a jank/freeze
+  // when scrolling past the Hero section into the next one.
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: "-15% 0px -15% 0px" });
+
   return (
-    <div className="relative mx-auto flex h-[380px] w-[380px] items-center justify-center sm:h-[440px] sm:w-[440px]">
+    <div
+      ref={ref}
+      className="relative mx-auto flex h-[380px] w-[380px] items-center justify-center sm:h-[440px] sm:w-[440px]"
+    >
       {/* faint concentric guide rings */}
       <div className="absolute h-[220px] w-[220px] rounded-full border border-void-border/70 sm:h-[260px] sm:w-[260px]" />
       <div className="absolute h-[340px] w-[340px] rounded-full border border-void-border/50 sm:h-[400px] sm:w-[400px]" />
 
-     <OrbitRing items={inner} radius={95} duration={60} />
-<OrbitRing items={outer} radius={175} duration={90} />
+     <OrbitRing items={inner} radius={95} duration={60} spin={isInView} />
+<OrbitRing items={outer} radius={175} duration={90} spin={isInView} />
 
       {/* central status card */}
       <motion.div
