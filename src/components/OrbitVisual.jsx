@@ -23,11 +23,7 @@ function OrbitRing({ items, radius, duration, size = 480 }) {
    <motion.div
   className="absolute inset-0"
   style={{ width: size, height: size }}
-  animate={
-    typeof window !== "undefined" && window.innerWidth <= 767
-      ? {}
-      : { rotate: 360 }
-  }
+animate={{ rotate: -360 }}
   transition={{ duration, repeat: Infinity, ease: "linear" }}
 >
       {items.map((tech, i) => (
@@ -40,11 +36,7 @@ function OrbitRing({ items, radius, duration, size = 480 }) {
         >
           {/* counter-rotate so the icon stays upright while the ring spins */}
          <motion.div
-  animate={
-    typeof window !== "undefined" && window.innerWidth <= 767
-      ? {}
-      : { rotate: -360 }
-  }
+animate={{ rotate: 360 }}
   transition={{ duration, repeat: Infinity, ease: "linear" }}
   className="group relative -translate-x-1/2 -translate-y-1/2"
 >
