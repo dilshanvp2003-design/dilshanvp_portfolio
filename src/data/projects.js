@@ -7,6 +7,7 @@ import bookVideo from "../assets/videos/book.mp4";
 import shoeImage from "../assets/images/shoe.jpeg";
 import sapImage from "../assets/images/sap.jpeg";
 import sinetImage from "../assets/images/sinet.jpeg";
+import studentImage from "../assets/images/Screenshot 2026-08-12 173515.png";
 
 
 export const projects = [
@@ -21,14 +22,14 @@ export const projects = [
   image: balanImage,
 },
 {
-  name: "Shoe Site",
-  category: "HTML & CSS",
+  name: "Ledger Site",
+  category: "React",
   description:
-    "A responsive shoe website built using HTML and CSS, featuring a modern layout, product sections, attractive styling, and a user-friendly design.",
-  tech: ["HTML", "CSS"],
-  github: "https://github.com/dilshanvp2003-design/shoe-site",
-  demo: "https://dilshanvp2003-design.github.io/shoe-site/",
-  image: shoeImage,
+    "A modern fintech landing page built using React and Tailwind CSS, featuring a clean, responsive, and user-friendly design.",
+  tech: ["React", "JavaScript", "Tailwind CSS"],
+  github: "https://github.com/dilshanvp2003-design/ledger",
+  demo: "https://amazing-sorbet-c89658.netlify.app/",
+  image: ledgerImage,
 },
 {
   name: "Dost",
@@ -70,5 +71,25 @@ export const projects = [
   github: "https://github.com/dilshanvp2003-design/sinet-project",
   demo: "https://dilshanvp2003-design.github.io/sinet-project/",
   image: sinetImage,
+},
+{
+  name: "Shoe Site",
+  category: "HTML & CSS",
+  description:
+    "A responsive shoe website built using HTML and CSS, featuring attractive styling, and a user-friendly design.",
+  tech: ["HTML", "CSS"],
+  github: "https://github.com/dilshanvp2003-design/shoe-site",
+  demo: "https://dilshanvp2003-design.github.io/shoe-site/",
+  image: shoeImage,
+},
+{
+  name: "Student React",
+  category: "React",
+  description:
+    "A student management web application built using React, featuring a clean, responsive, and user-friendly interface.",
+  tech: ["React", "JavaScript", "CSS"],
+  github: "https://github.com/dilshanvp2003-design/student_react",
+  demo: "https://student-react-zmzp.vercel.app/",
+  image: studentImage,
 },
 ];

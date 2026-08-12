@@ -66,8 +66,8 @@ export const journey = [
     desc: "Building full-stack apps end-to-end with React, Django and Node.",
   },
   {
-    title: "Database Development",
-    desc: "Designing schemas and queries across SQL and NoSQL systems.",
+   title: "Full Stack Development",
+desc: "Building responsive and dynamic web applications using modern frontend and backend technologies.",
   },
   {
     title: "Data Analytics",
