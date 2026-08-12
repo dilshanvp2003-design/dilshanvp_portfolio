@@ -66,16 +66,16 @@ export default function OrbitVisual() {
   const isInView = useInView(ref, { margin: "-15% 0px -15% 0px" });
 
   return (
-    <div
+   <div
       ref={ref}
-      className="relative mx-auto flex h-[380px] w-[380px] items-center justify-center sm:h-[440px] sm:w-[440px]"
+      className="relative mx-auto flex h-[440px] w-[440px] items-center justify-center sm:h-[500px] sm:w-[500px]"
     >
       {/* faint concentric guide rings */}
-      <div className="absolute h-[220px] w-[220px] rounded-full border border-void-border/70 sm:h-[260px] sm:w-[260px]" />
-      <div className="absolute h-[340px] w-[340px] rounded-full border border-void-border/50 sm:h-[400px] sm:w-[400px]" />
+      <div className="absolute h-[160px] w-[160px] rounded-full border border-void-border/70 sm:h-[190px] sm:w-[190px]" />
+      <div className="absolute h-[400px] w-[400px] rounded-full border border-void-border/50 sm:h-[460px] sm:w-[460px]" />
 
-     <OrbitRing items={inner} radius={95} duration={60} spin={isInView} />
-<OrbitRing items={outer} radius={175} duration={90} spin={isInView} />
+     <OrbitRing items={inner} radius={122} duration={60} spin={isInView} />
+<OrbitRing items={outer} radius={172} duration={90} spin={isInView} />
 
       {/* central status card */}
       <motion.div
